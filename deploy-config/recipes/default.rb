@@ -15,6 +15,6 @@ node[:deploy].each do |app, deploy|
       action :create
     end
   file File.join(deploy[:deploy_to], 'node_modules', 'config', 'index.json') do
-    content JSON.dump(node[:passport][app])
+    content JSON.dump(node[:config][app])
   end
 end
